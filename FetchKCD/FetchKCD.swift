@@ -8,8 +8,8 @@
 
 import Foundation
 
-class FetchKCD: NSObject {
-	func fetchList(begin: Int, end: Int) -> NSMutableArray {
+public class FetchKCD: NSObject {
+	public func fetchList(begin: Int, end: Int) -> NSMutableArray {
 		var comicDictionary = NSMutableArray()
 		var e = end
 		for let i = begin; i > e; e++
@@ -32,14 +32,14 @@ class FetchKCD: NSObject {
 	}
 
 	// Fetch the number of the latest comic, easier than fetching the whole comic for just the number
-	func getLatestComicNumber() -> Int {
+	public func getLatestComicNumber() -> Int {
 		let endpoint = NSURL(string: "http://xkcd.com/info.0.json")
 		let data = NSData(contentsOfURL: endpoint!)
 		let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject]
 		return jsonDict!!["num"] as! Int
 	}
 	// Fetch latest comic, returns the URL of the image, name, and the number
-	func getLatestComic() -> NSMutableDictionary {
+	public func getLatestComic() -> NSMutableDictionary {
 		let endpoint = NSURL(string: "http://xkcd.com/info.0.json")
 		let data = NSData(contentsOfURL: endpoint!)
 		let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject]
@@ -48,14 +48,14 @@ class FetchKCD: NSObject {
 		return whomboCombo;
 	}
 
-	func getComicByNumber(number: Int) -> NSMutableDictionary {
+	public func getComicByNumber(number: Int) -> NSMutableDictionary {
 		let endpoint = NSURL(string: "http://xkcd.com/\(number)/info.0.json")
 		let data = NSData(contentsOfURL: endpoint!)
 		let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject]
 		let whomboCombo: NSMutableDictionary = ["url": jsonDict!!["img"]!, "name": jsonDict!!["title"]!, "number": jsonDict!!["num"]!]
 		return whomboCombo;
 	}
-    func getComicTitle(number: Int) -> String{
+    public func getComicTitle(number: Int) -> String{
         let endpoint = NSURL(string: "http://xkcd.com/\(number)/info.0.json")
         let data = NSData(contentsOfURL: endpoint!)
         let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject]

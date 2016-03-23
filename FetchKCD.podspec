@@ -8,7 +8,7 @@ s.summary = "FetchKCD is a library that allows you to reference XKCD comics."
 s.requires_arc = true
 
 # 2
-s.version = "0.1.0"
+s.version = "0.1.1"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
