@@ -10,6 +10,7 @@
 		8A6CB52A1CA230290097EA42 /* FetchKCD.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6CB5291CA230290097EA42 /* FetchKCD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A6CB5311CA230290097EA42 /* FetchKCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6CB5261CA230290097EA42 /* FetchKCD.framework */; };
 		8A6CB5361CA230290097EA42 /* FetchKCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6CB5351CA230290097EA42 /* FetchKCDTests.swift */; };
+		8A6CB5411CA230C00097EA42 /* FetchKCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6CB5401CA230C00097EA42 /* FetchKCD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		8A6CB5301CA230290097EA42 /* FetchKCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchKCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6CB5351CA230290097EA42 /* FetchKCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchKCDTests.swift; sourceTree = "<group>"; };
 		8A6CB5371CA230290097EA42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A6CB5401CA230C00097EA42 /* FetchKCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchKCD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		8A6CB5281CA230290097EA42 /* FetchKCD */ = {
 			isa = PBXGroup;
 			children = (
+				8A6CB5401CA230C00097EA42 /* FetchKCD.swift */,
 				8A6CB5291CA230290097EA42 /* FetchKCD.h */,
 				8A6CB52B1CA230290097EA42 /* Info.plist */,
 			);
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6CB5411CA230C00097EA42 /* FetchKCD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 		8A6CB53B1CA230290097EA42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bittank.FetchKCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8A6CB53C1CA230290097EA42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +383,7 @@
 				8A6CB53C1CA230290097EA42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A6CB53D1CA230290097EA42 /* Build configuration list for PBXNativeTarget "FetchKCDTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +392,7 @@
 				8A6CB53F1CA230290097EA42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
